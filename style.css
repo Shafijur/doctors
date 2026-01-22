@@ -779,6 +779,18 @@ a:hover {
 
 
 
+a.btn.btn-outline-light.btn-lg {
+    color: gray;
+    border: 2px solid gray;
+}
+a.btn.btn-outline-light.btn-lg:hover {
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    background-color: #000000;
+}
+
+
+
 
 
 /* Responsive Styles */
@@ -866,6 +878,9 @@ a:hover {
 @media (max-width: 575px) {
     .hero-section h1 {
         font-size: 1.8rem;
+    }
+    a.navbar-brand {
+        font-size: 16px;
     }
     
     .btn-lg {
