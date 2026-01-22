@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Pharmacy Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/pharmacy-logo.png">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-pills"></i> PharmaCare
+                <span class="badge bg-warning">Management System</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features"><i class="fas fa-cubes"></i> Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#modules"><i class="fas fa-th-large"></i> Modules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dashboard-preview"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-palette"></i> Theme
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item theme-option" data-theme="light" href="#"><i class="fas fa-sun"></i> Light Mode</a></li>
+                            <li><a class="dropdown-item theme-option" data-theme="dark" href="#"><i class="fas fa-moon"></i> Dark Mode</a></li>
+                            <li><a class="dropdown-item theme-option" data-theme="coffee" href="#"><i class="fas fa-coffee"></i> Coffee Mode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-warning login-btn" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Pharmacy Asset & Accounting Management System</h1>
+                    <p class="lead mb-4">A comprehensive solution for managing medicine inventory, sales, accounting, and asset tracking for modern pharmacies and healthcare facilities.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="register.html" class="btn btn-primary btn-lg"><i class="fas fa-user-plus"></i> Get Started</a>
+                        <a href="#dashboard-preview" class="btn btn-outline-light btn-lg"><i class="fas fa-eye"></i> Live Demo</a>
+                        <a href="#features" class="btn btn-outline-light btn-lg"><i class="fas fa-play-circle"></i> Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pharmacy Management" class="img-fluid rounded shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Core Features</h2>
+                    <p class="section-subtitle">Everything you need to efficiently manage your pharmacy business</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h4>Medicine Management</h4>
+                        <p>Complete inventory tracking with expiry alerts, batch numbers, and supplier details.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Sales & Accounting</h4>
+                        <p>Track sales, calculate profits, generate invoices, and manage financial records.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h4>Stock Management</h4>
+                        <p>Real-time stock updates, low stock alerts, and automated reorder suggestions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Role-Based Access</h4>
+                        <p>Secure access control with Super Admin, Admin, and Staff roles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">System Modules</h2>
+                    <p class="section-subtitle">Comprehensive modules to manage every aspect of your pharmacy</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <h4><i class="fas fa-capsules"></i> Asset & Medicine Management</h4>
+                        </div>
+                        <div class="module-body">
+                            <ul>
+                                <li>Product name, category, supplier details</li>
+                                <li>Purchase & selling price tracking</li>
+                                <li>Quantity and expiry date management</li>
+                                <li>Asset location and department assignment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <h4><i class="fas fa-file-invoice-dollar"></i> Sales & Accounting</h4>
+                        </div>
+                        <div class="module-body">
+                            <ul>
+                                <li>Product sale entry with quantity tracking</li>
+                                <li>Automatic price calculation</li>
+                                <li>Daily, monthly & total sales reports</li>
+                                <li>Profit/Loss calculation with charts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <h4><i class="fas fa-chart-bar"></i> Reports & Analytics</h4>
+                        </div>
+                        <div class="module-body">
+                            <ul>
+                                <li>Total products and sales summary</li>
+                                <li>Available stock overview</li>
+                                <li>Total income and expense tracking</li>
+                                <li>Net balance calculation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <h4><i class="fas fa-tags"></i> Category & Supplier Management</h4>
+                        </div>
+                        <div class="module-body">
+                            <ul>
+                                <li>Add, edit, delete categories</li>
+                                <li>Category-wise product filtering</li>
+                                <li>Supplier details management</li>
+                                <li>Supplier-wise product lists</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <h4><i class="fas fa-clipboard-list"></i> Service Log System</h4>
+                        </div>
+                        <div class="module-body">
+                            <ul>
+                                <li>Service/maintenance logs for assets</li>
+                                <li>Date, description, and cost tracking</li>
+                                <li>Service history and scheduling</li>
+                                <li>Maintenance cost analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <h4><i class="fas fa-bell"></i> Alerts & Notifications</h4>
+                        </div>
+                        <div class="module-body">
+                            <ul>
+                                <li>Low stock alerts</li>
+                                <li>Expiry date notifications</li>
+                                <li>Critical asset alerts</li>
+                                <li>Sales milestone notifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section id="dashboard-preview" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Dashboard Preview</h2>
+                    <p class="section-subtitle">Modern, responsive dashboard with real-time analytics</p>
+                </div>
+            </div>
+            
+            <div class="dashboard-preview-container">
+                <div class="dashboard-header">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h3><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h3>
+                            <p>Welcome back, <span class="text-warning">Super Admin</span></p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <span class="badge bg-success">Last login: Today, 10:30 AM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-cards">
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon total-products">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>1,248</h3>
+                                    <p>Total Products</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon total-sales">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>₹ 2,84,560</h3>
+                                    <p>Total Sales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon available-stock">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>4,892</h3>
+                                    <p>Available Stock</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-card">
+                                <div class="stat-icon total-income">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>₹ 4,12,800</h3>
+                                    <p>Total Income</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-charts mt-4">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="chart-container">
+                                <h5><i class="fas fa-chart-line"></i> Sales Overview (Last 7 Days)</h5>
+                                <div class="chart-placeholder">
+                                    <canvas id="salesChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="chart-container">
+                                <h5><i class="fas fa-chart-pie"></i> Stock by Category</h5>
+                                <div class="chart-placeholder">
+                                    <canvas id="stockChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-table mt-4">
+                    <h5><i class="fas fa-exclamation-triangle"></i> Low Stock Alerts</h5>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Medicine Name</th>
+                                    <th>Category</th>
+                                    <th>Current Stock</th>
+                                    <th>Minimum Required</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>Fever</td>
+                                    <td>24</td>
+                                    <td>100</td>
+                                    <td><span class="badge bg-danger">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>Antibiotic</td>
+                                    <td>42</td>
+                                    <td>150</td>
+                                    <td><span class="badge bg-warning">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cetirizine 10mg</td>
+                                    <td>Allergy</td>
+                                    <td>68</td>
+                                    <td>120</td>
+                                    <td><span class="badge bg-warning">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Omeprazole 20mg</td>
+                                    <td>Acidity</td>
+                                    <td>89</td>
+                                    <td>100</td>
+                                    <td><span class="badge bg-info">Moderate</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="dashboard.html" class="btn btn-primary btn-lg"><i class="fas fa-external-link-alt"></i> Explore Full Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role-Based Access Section -->
+    <section id="roles" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Role-Based Access Control</h2>
+                    <p class="section-subtitle">Secure access tailored to user responsibilities</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="role-card super-admin">
+                        <div class="role-header">
+                            <h4><i class="fas fa-crown"></i> Super Admin</h4>
+                            <div class="role-badge">Full Control</div>
+                        </div>
+                        <div class="role-body">
+                            <ul>
+                                <li>Full system access and control</li>
+                                <li>Manage all users, roles, and permissions</li>
+                                <li>System settings and configuration</li>
+                                <li>Generate all reports and analytics</li>
+                                <li>Backup and restore system data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="role-card admin">
+                        <div class="role-header">
+                            <h4><i class="fas fa-user-shield"></i> Admin</h4>
+                            <div class="role-badge">Management</div>
+                        </div>
+                        <div class="role-body">
+                            <ul>
+                                <li>Manage assets, products, and stock</li>
+                                <li>Handle suppliers and categories</li>
+                                <li>Process sales and manage inventory</li>
+                                <li>View and generate reports</li>
+                                <li>Manage service logs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="role-card staff">
+                        <div class="role-header">
+                            <h4><i class="fas fa-user"></i> Staff/User</h4>
+                            <div class="role-badge">Limited Access</div>
+                        </div>
+                        <div class="role-body">
+                            <ul>
+                                <li>View and add sales entries</li>
+                                <li>Update stock levels</li>
+                                <li>Add service/maintenance logs</li>
+                                <li>View limited reports</li>
+                                <li>No access to user management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4><i class="fas fa-pills"></i> PharmaCare</h4>
+                    <p>A comprehensive pharmacy management system for tracking inventory, sales, accounting, and assets with role-based access control.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#modules">Modules</a></li>
+                        <li><a href="#dashboard-preview">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>System Modules</h5>
+                    <ul>
+                        <li><a href="assets.html">Asset Management</a></li>
+                        <li><a href="sales.html">Sales & Accounting</a></li>
+                        <li><a href="reports.html">Reports & Analytics</a></li>
+                        <li><a href="#roles">User Management</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Medical Street, Health City</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@pharmacare.com</li>
+                        <li><i class="fas fa-globe"></i> www.pharmacare.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 PharmaCare Management System. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Designed with <i class="fas fa-heart text-danger"></i> for pharmacy businesses</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="btn btn-warning">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js for dashboard preview -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

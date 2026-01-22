@@ -1,0 +1,171 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PharmaCare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-pills"></i> PharmaCare
+                <span class="badge bg-warning">Management System</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="login-card">
+                        <div class="login-header text-center mb-4">
+                            <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                            <p class="text-muted">Access your PharmaCare account</p>
+                        </div>
+                        
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control" id="email" placeholder="admin@pharmacare.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                <a href="#" class="float-end">Forgot Password?</a>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="role" class="form-label">Login As</label>
+                                <select class="form-select" id="role" required>
+                                    <option value="">Select Role</option>
+                                    <option value="super-admin">Super Admin</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="staff">Staff/User</option>
+                                </select>
+                            </div>
+                            
+                            <div class="d-grid mb-4">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-sign-in-alt"></i> Login to Dashboard
+                                </button>
+                            </div>
+                            
+                            <div class="text-center">
+                                <p class="mb-0">Don't have an account? <a href="register.html">Create one</a></p>
+                                <p class="mt-2"><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
+                            </div>
+                        </form>
+                        
+                        <div class="login-footer mt-4 pt-4 border-top text-center">
+                            <p class="small text-muted">
+                                Demo Credentials:<br>
+                                <strong>Super Admin:</strong> superadmin@pharmacare.com / password123<br>
+                                <strong>Admin:</strong> admin@pharmacare.com / admin123<br>
+                                <strong>Staff:</strong> staff@pharmacare.com / staff123
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="btn btn-warning">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Login page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            
+            if (togglePassword) {
+                togglePassword.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+                });
+            }
+            
+            // Login form submission
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    const role = document.getElementById('role').value;
+                    const rememberMe = document.getElementById('rememberMe').checked;
+                    
+                    // Simple validation
+                    if (!email || !password || !role) {
+                        alert('Please fill in all fields');
+                        return;
+                    }
+                    
+                    // Simulate login process
+                    alert(`Login successful!\n\nEmail: ${email}\nRole: ${role}\nRemember me: ${rememberMe ? 'Yes' : 'No'}\n\nRedirecting to dashboard...`);
+                    
+                    // Redirect to dashboard (simulated)
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1500);
+                });
+            }
+            
+            // Set theme from localStorage
+            const savedTheme = localStorage.getItem('pharma-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Initialize theme toggle button
+            const themeToggleBtn = document.getElementById('themeToggle');
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('pharma-theme', newTheme);
+                    
+                    // Update icon
+                    const icon = this.querySelector('i');
+                    icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+                });
+                
+                // Set initial icon
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const icon = themeToggleBtn.querySelector('i');
+                icon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        });
+    </script>
+</body>
+</html>
